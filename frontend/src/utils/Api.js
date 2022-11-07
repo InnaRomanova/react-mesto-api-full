@@ -1,21 +1,21 @@
 class Api {
-  constructor({ baseUrl, token, cohort }) {
+  constructor({ baseUrl }) {
     this._baseUrl = baseUrl
-    this._token = token;
-    this._cohort = cohort;
+    // this._token = token;
+    // this._cohort = cohort;
   }
 
-  _request(adres, method, info) {
+  _request(path, method, info) {
     const pattern = {
       method: method,
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': this._token,
+        // 'Authorization': this._token,
       }
     }
 
     return fetch(
-      `${this._baseUrl}/${this._cohort}/${adres}`,
+      `${this._baseUrl}/${path}`,
       info ? { ...pattern, body: JSON.stringify(info) } : pattern
     )
       .then(res => {
@@ -56,9 +56,9 @@ class Api {
   }
 }
 const newApi = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1',
-  token: '6317d273-77cd-40e4-acd5-6cbb113af6b1',
-  cohort: 'cohort-47'
+  baseUrl: 'http://api.romanovainna.students.nomoredomains.icu',
+  // token: '6317d273-77cd-40e4-acd5-6cbb113af6b1',
+  // cohort: 'cohort-47'
 })
 
 export default newApi

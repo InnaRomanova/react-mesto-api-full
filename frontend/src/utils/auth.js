@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://auth.nomoreparties.co';
+export const BASE_URL = 'https://api.romanovainna.students.nomoredomains.icu';
 
 export const register = (email, password) => {
     return fetch(`${BASE_URL}/signup`, {
@@ -35,12 +35,12 @@ export const autorization = (email, password) => {
         })
 }
 
-export const restContent = (token) => {
+export const restContent = () => {
     return fetch(`${BASE_URL}/users/me`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`,
+            // 'Authorization': `Bearer ${token}`,
         }
     })
             .then((response) => {

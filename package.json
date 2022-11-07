@@ -1,0 +1,22 @@
+{
+  "name": "react-mesto-api-full",
+  "version": "1.0.0",
+  "description": "[![Tests](https://github.com/InnaRomanova/express-mesto-gha/actions/workflows/tests-13-sprint.yml/badge.svg)](https://github.com/InnaRomanova/express-mesto-gha/actions/workflows/tests-13-sprint.yml) [![Tests](https://github.com/InnaRomanova/express-mesto-gha/actions/workflows/tests-14-sprint.yml/badge.svg)](https://github.com/InnaRomanova/express-mesto-gha/actions/workflows/tests-14-sprint.yml)\r # Проект Mesto бэкенд",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InnaRomanova/react-mesto-api-full.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InnaRomanova/react-mesto-api-full/issues"
+  },
+  "homepage": "https://github.com/InnaRomanova/react-mesto-api-full#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0"
+  }
+}
