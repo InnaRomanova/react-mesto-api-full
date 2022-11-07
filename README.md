@@ -8,7 +8,7 @@ Frontend: https://inna.domainname.student.nomoredomains.icu
 Backend: https://api.romanovainna.students.nomoredomains.icu
 
 ## Используемые технологии
-Fronten
+Frontend
 * React v18
 * React Router v5
 
