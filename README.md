@@ -23,14 +23,11 @@ Backend:
 
 ## Запуск проекта
     Frontend:
-    `npm run start` — запускает проект в режиме разработки   
-    `npm run build` — Соберет проект в папку build для продакшена
+        
+`npm run start` — запускает проект в режиме разработки   
+`npm run build` — Соберет проект в папку build для продакшена
 
     Backend:
-    `npm run start` — запускает сервер   
-    `npm run dev` — запускает сервер с hot-reload
-
-    
-    Backend:
-    `npm run start` — запускает сервер   
-    `npm run dev` — запускает сервер с hot-reload
+        
+`npm run start` — запускает сервер   
+`npm run dev` — запускает сервер с hot-reload
