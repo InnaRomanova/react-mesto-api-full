@@ -11,7 +11,8 @@ class Api {
       headers: {
         'Content-Type': 'application/json',
         // 'Authorization': this._token,
-      }
+      },
+      credentials: 'include',
     }
 
     return fetch(

@@ -11,7 +11,8 @@ export const register = (email, password) => {
         body: JSON.stringify({
             "email": email,
             "password": password
-        })
+        }),
+        credentials: 'include',
     })
         .then((response) => {
             return response.ok ? response.json() : Promise.reject(response.status)
@@ -28,16 +29,29 @@ export const autorization = (email, password) => {
         body: JSON.stringify({
             "email": email,
             "password": password
-        })
+        }),
+        credentials: 'include',
     })
         .then((response) => {
             return response.ok ? response.json() : Promise.reject(response.status)
         })
 }
 
+export const logout = () => {
+    return fetch(`${BASE_URL}/signin`, {
+        method: 'GET',
+        credentials: 'include',
+    })
+        .then((response) => {
+            return response.ok ? response.json() : Promise.reject(response.status)
+        })
+}
+
+
 export const restContent = () => {
     return fetch(`${BASE_URL}/users/me`, {
         method: 'GET',
+        credentials: 'include',
         headers: {
             'Content-Type': 'application/json',
             // 'Authorization': `Bearer ${token}`,
