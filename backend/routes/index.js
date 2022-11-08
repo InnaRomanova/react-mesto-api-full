@@ -6,6 +6,7 @@ const usersRoute = require('./usersRoute');
 const auth = require('../middlewares/auth');
 const NotFoundCode = require('../errors/notFoundCode');
 
+// крашт-тест потом удалить
 router.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
