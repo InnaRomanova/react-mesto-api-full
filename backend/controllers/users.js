@@ -4,14 +4,14 @@ const User = require('../models/user');
 const ErrorCode = require('../errors/errorCode');
 const NotFoundCode = require('../errors/notFoundCode');
 const ConflictEmail = require('../errors/conflictEmail');
-const { JWT } = require('../utils/constants');
+const { getJWTSecretKey } = require('../utils/utils');
 
 module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUser(email, password)
     .then((user) => {
       // создаю токен
-      const token = jwt.sign({ _id: user._id }, JWT, { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, getJWTSecretKey(), { expiresIn: '7d' });
       // возвращаю токен
       res
         .cookie('token', token, {
