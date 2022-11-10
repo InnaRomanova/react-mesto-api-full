@@ -41,11 +41,11 @@ class Api {
   }
 
   getCards() {
-    return this._request('/cards', 'GET')
+    return this._request('cards', 'GET')
   }
 
   setNewCard(data) {
-    return this._request('/cards', 'POST', data)
+    return this._request('cards', 'POST', data)
   }
 
   changeLikeCardStatus(cardId, isLiked) {
