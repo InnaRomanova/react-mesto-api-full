@@ -12,13 +12,11 @@ module.exports.login = (req, res, next) => {
     .then((user) => {
       // создаю токен
       const token = jwt.sign({ _id: user._id }, getJWTSecretKey(), { expiresIn: '7d' });
-      // возвращаю токен
-      console.log(token);
       res
         .cookie('token', token, {
           // JWT токен, который отправляем
           maxAge: 3600000,
-          httpOnly: true,
+          httpOnly: false,
           sameSite: true,
         }).send({ email });
     })

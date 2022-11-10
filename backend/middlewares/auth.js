@@ -5,16 +5,15 @@ const UnauthorixedErrorCode = require('../errors/unauthorixedErrorCode');
 module.exports = (req, _, next) => {
   const { token } = req.cookies;
   if (!token) {
-    throw new UnauthorixedErrorCode('Необходима авторизация 1');
+    throw new UnauthorixedErrorCode('Необходима авторизация');
   }
 
   let payload;
   // верифицирую токен
   try {
     payload = jwt.verify(token, getJWTSecretKey());
-    console.log(payload);
   } catch (err) {
-    return next(new UnauthorixedErrorCode('Необходима авторизация 2'));
+    return next(new UnauthorixedErrorCode('Необходима авторизация'));
   // отправляю ошибку, если не получилось
   }
   // записываю пейлоуд в объект запроса
