@@ -29,15 +29,15 @@ export const autorization = (email, password) => {
         })
 }
 
-export const logout = () => {
-    return fetch(`${BASE_URL}/signout`, {
-        method: 'GET',
-        credentials: 'include',
-    })
-        .then((response) => {
-            return response.ok ? response.json() : Promise.reject(response.status)
-        })
-}
+// export const logout = () => {
+//     return fetch(`${BASE_URL}/signout`, {
+//         method: 'GET',
+//         credentials: 'include',
+//     })
+//         .then((response) => {
+//             return response.ok ? response.json() : Promise.reject(response.status)
+//         })
+// }
 
 
 export const restContent = () => {
