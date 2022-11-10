@@ -1,11 +1,11 @@
 import React from "react";
 import Card from "./Card.js";
-import {CurrentUserContext} from '../contexts/CurrentUserContext.js';
+import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 
-function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onCardDelete, 
+function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onCardDelete,
     onCardLike, onDeletePopup, onConfirmDelete, setDeletedCard }) {
     const currentUser = React.useContext(CurrentUserContext);
-    
+
     return (
         <main className="content">
             <section className="profile" type="button">
@@ -30,16 +30,15 @@ function Main({onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onCa
                     type="button"
                     title="Добавить фотографию" />
             </section>
-           
+
             <section className="elements">
                 <ul className="elements__contain">
-                    {console.log(cards)}
                     {cards.map((card) => {
-                        return (<Card key={card._id} card={card} 
-                            onCardClick={onCardClick} onCardLike={onCardLike}
-                            onCardDelete={onCardDelete} onDeletePopup={onDeletePopup} 
-                            onConfirmDelete={onConfirmDelete} setDeletedCard={setDeletedCard} />)
-                    })}
+                            return (<Card key={card._id} card={card}
+                                onCardClick={onCardClick} onCardLike={onCardLike}
+                                onCardDelete={onCardDelete} onDeletePopup={onDeletePopup}
+                                onConfirmDelete={onConfirmDelete} setDeletedCard={setDeletedCard} />)
+                        })}
                 </ul>
             </section>
         </main>

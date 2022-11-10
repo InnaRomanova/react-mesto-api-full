@@ -53,15 +53,6 @@ function App() {
       });
   }
 
-  function handleCardDelete(card) {
-    newApi.changeDeleteCardStatus(card._id)
-      .then((newCard) => {
-        setCards((cards) => cards.filter((c) => c._id !== card._id))
-      }).catch((err) => {
-        console.error(err);
-      });
-  }
-
   const handleAddPlaceSubmit = (card) => {
     newApi.setNewCard(card)
       .then((newCard) => {
@@ -71,6 +62,15 @@ function App() {
       .catch((err) => {
         console.error(err);
       })
+  }
+
+  function handleCardDelete(card) {
+    newApi.changeDeleteCardStatus(card._id)
+      .then((newCard) => {
+        setCards((cards) => cards.filter((c) => c._id !== card._id))
+      }).catch((err) => {
+        console.error(err);
+      });
   }
 
   const handleUpdateAvatar = (avatarData) => {
