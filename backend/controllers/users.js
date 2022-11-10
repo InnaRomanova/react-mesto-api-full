@@ -12,7 +12,7 @@ module.exports.login = (req, res, next) => {
     .then((user) => {
       // создаю токен
       const token = jwt.sign({ _id: user._id }, getJWTSecretKey(), { expiresIn: '7d' });
-      const result = res
+      res
         .cookie('token', token, {
           // JWT токен, который отправляем
           maxAge: 3600000,
@@ -21,7 +21,6 @@ module.exports.login = (req, res, next) => {
           secure: true,
           domain: 'api.romanovainna.students.nomoredomains.icu',
         }).send({ email });
-      console.log(result);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

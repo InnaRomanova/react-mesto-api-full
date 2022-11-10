@@ -57,7 +57,7 @@ class Api {
   }
 }
 const newApi = new Api({
-  baseUrl: 'http://api.romanovainna.students.nomoredomains.icu',
+  baseUrl: 'https://api.romanovainna.students.nomoredomains.icu',
   // token: '6317d273-77cd-40e4-acd5-6cbb113af6b1',
   // cohort: 'cohort-47'
 })
