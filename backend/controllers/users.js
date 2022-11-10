@@ -16,8 +16,10 @@ module.exports.login = (req, res, next) => {
         .cookie('token', token, {
           // JWT токен, который отправляем
           maxAge: 3600000,
-          httpOnly: false,
+          httpOnly: true,
           sameSite: true,
+          secure: true,
+          domain: 'inna.domainname.student.nomoredomains.icu',
         }).send({ email });
     })
     .catch((err) => {
