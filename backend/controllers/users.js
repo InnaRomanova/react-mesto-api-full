@@ -12,15 +12,16 @@ module.exports.login = (req, res, next) => {
     .then((user) => {
       // создаю токен
       const token = jwt.sign({ _id: user._id }, getJWTSecretKey(), { expiresIn: '7d' });
-      res
+      const result = res
         .cookie('token', token, {
           // JWT токен, который отправляем
           maxAge: 3600000,
           httpOnly: true,
           sameSite: true,
           secure: true,
-          domain: 'inna.domainname.student.nomoredomains.icu',
+          domain: 'api.romanovainna.students.nomoredomains.icu',
         }).send({ email });
+      console.log(result);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
