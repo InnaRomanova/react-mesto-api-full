@@ -36,7 +36,7 @@ export const autorization = (email, password) => {
 }
 
 export const logout = () => {
-    return fetch(`${BASE_URL}/signin`, {
+    return fetch(`${BASE_URL}/signout`, {
         method: 'GET',
         credentials: 'include',
     })
