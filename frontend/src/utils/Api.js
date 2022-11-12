@@ -41,7 +41,28 @@ class Api {
   }
 
   getCards() {
-    return this._request('cards', 'GET')
+    const pattern = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        // 'Authorization': this._token,
+      },
+      credentials: 'include',
+    }
+
+    return fetch(
+      `${this._baseUrl}/cards`,
+       pattern
+    )
+      .then(res => {
+        if (res.ok) {
+          console.log(res);
+          return res.cards;
+        } else {
+          Promise.reject(`ошибка: ${res.status}`)
+        }
+      })
+    // return this._request('cards', 'GET')
   }
 
   setNewCard(data) {

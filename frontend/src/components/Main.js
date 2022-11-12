@@ -33,6 +33,7 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onC
 
             <section className="elements">
                 <ul className="elements__contain">
+                    {console.log(cards)}
                     {cards.map((card) => {
                             return (<Card key={card._id} card={card}
                                 onCardClick={onCardClick} onCardLike={onCardLike}
