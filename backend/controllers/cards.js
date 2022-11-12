@@ -55,7 +55,7 @@ module.exports.likeCard = (req, res, next) => {
       if (!card) {
         return next(new NotFoundCode('Пост с таким id не найден'));
       }
-      return res.send({ card, message: 'Лайк поставлен' });
+      return res.send(card);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
