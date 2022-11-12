@@ -5,7 +5,7 @@ const ServerCode = require('../errors/serverCode');
 const ForbiddenError = require('../errors/forbiddenError');
 
 module.exports.getCards = (req, res, next) => {
-  Card.find({}).then((cards) => res.send({ cards }))
+  Card.find({}).then((cards) => res.send(cards))
     .catch(next);
 };
 
