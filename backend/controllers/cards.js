@@ -77,7 +77,7 @@ module.exports.dislikeCard = (req, res, next) => {
       if (!card) {
         return next(new NotFoundCode('Карточка с указанным id не найдена'));
       }
-      return res.send({ card, message: 'Лайк удален' });
+      return res.send(card);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
