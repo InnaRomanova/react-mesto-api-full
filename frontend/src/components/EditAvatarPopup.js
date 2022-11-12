@@ -5,7 +5,6 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
     const avatarRef = React.useRef()
 
     function handleSubmit(e) {
-        console.log(avatarRef.current.value)
         e.preventDefault();
         onUpdateAvatar({ avatar: avatarRef.current.value }); /* Значение инпута, полученное с помощью рефа */
     }

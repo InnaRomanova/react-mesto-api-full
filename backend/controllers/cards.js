@@ -26,13 +26,13 @@ module.exports.deleteCard = (req, res, next) => {
   Card.findById(req.params.cardId)
     .then((card) => {
       if (!card) {
-        throw new NotFoundCode('Пост с таким id не найден');
+        throw new NotFoundCode('Карточка с таким id не найден');
       }
       if (card.owner.toString() !== req.user._id) {
         throw new ForbiddenError('Чужие карточки удалять нельзя');
       }
       Card.findByIdAndRemove(req.params.cardId)
-        .then(() => res.send({ message: 'Пост удалён' }))
+        .then(() => res.send({ message: 'Карточка удалена' }))
         .catch(next);
     })
     .catch((err) => {
