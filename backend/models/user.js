@@ -6,13 +6,13 @@ const UnauthorixedErrorCode = require('../errors/unauthorixedErrorCode');
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    // required: true,
     minlength: [2, 'поле должно содержать минимум 2 символа'],
     maxlength: [30, 'макимальная длина поля 30 символов'],
     default: 'Жак-Ив Кусто',
   },
   about: {
-    required: true,
+    // required: true,
     minlength: [2, 'поле должно содержать минимум 2 символа'],
     maxlength: [30, 'макимальная длина поля 30 символов'],
     type: String,
@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
   },
   avatar: {
     type: String,
-    required: true,
+    // required: true,
     default: 'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',
     validate: {
       validator: (v) => validator.isURL(v, { protocols: ['http', 'https'], require_protocol: true }),
