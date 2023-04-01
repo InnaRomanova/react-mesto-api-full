@@ -2,12 +2,6 @@
 
 Репозиторий приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположен в директории `backend/`, а фронтенд - в `frontend/`. Репозиторий проекта: https://github.com/InnaRomanova/react-mesto-api-full
 
-IP 158.160.39.12
-  
-Frontend: https://inna.domainname.student.nomoredomains.icu
-
-Backend: https://api.romanovainna.students.nomoredomains.icu
-
 ## Используемые технологии
 Frontend
 * React v18
