@@ -32,7 +32,7 @@ module.exports.deleteCard = (req, res, next) => {
         throw new ForbiddenError('Чужие карточки удалять нельзя');
       }
       return card.remove()
-        .then(() => res.send({ message: 'КАрточка удалена' }));
+        .then(() => res.send({ message: 'Карточка удалена' }));
     })
     .catch((err) => {
       if (err.name === 'CastError') {

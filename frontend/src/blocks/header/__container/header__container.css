@@ -2,7 +2,6 @@
     margin: 8px 2px 0 auto;
     padding: 0;
     display: flex;
-    /* justify-content: end; */
     height: 22px;
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
@@ -12,12 +11,6 @@
     text-align: right;
     color: #FFFFFF;
 }
-
-/* @media screen and (max-width: 1083px) {
-    .header__container {
-        margin-right: 34px;
-    }
-} */
 
 @media screen and (max-width: 580px) {
     .header__container {
