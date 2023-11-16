@@ -14,15 +14,17 @@ module.exports.login = (req, res, next) => {
       const token = jwt.sign({ _id: user._id }, getJWTSecretKey(), {
         expiresIn: "7d",
       });
-      res.send({ email, token });
-      //  .cookie('token', token, {
-      //    // JWT токен, который отправляем
-      //    maxAge: 3600000,
-      //    httpOnly: true,
-      //    sameSite: true,
-      //    secure: true,
-      //    domain: 'mesto-travel.ru',
-      //  }).send({ email });
+      res
+        .send({ email, token })
+        .cookie("token", token, {
+          // JWT токен, который отправляем
+          maxAge: 3600000,
+          httpOnly: true,
+          sameSite: true,
+          secure: true,
+          domain: "mesto-travel.store",
+        })
+        .send({ email });
     })
     .catch((err) => {
       if (err.name === "ValidationError") {

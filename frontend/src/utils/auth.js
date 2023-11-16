@@ -1,4 +1,4 @@
-export const BASE_URL = "http://mesto-travel.ru";
+export const BASE_URL = "http://mesto-travel.store";
 
 export const register = (email, password) => {
   return fetch(`${BASE_URL}/signup`, {
@@ -39,10 +39,10 @@ export const restContent = () => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     credentials: "include",
-    // headers: {
-    //     'Content-Type': 'application/json',
-    //      'Authorization': `Bearer ${token}`,
-    // }
+    headers: {
+      // "Content-Type": "application/json",
+      // Authorization: `Bearer ${token}`,
+    },
   }).then((response) => {
     return response.ok ? response.json() : Promise.reject(response.status);
   });
