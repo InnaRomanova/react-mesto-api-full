@@ -35,14 +35,14 @@ export const logout = () => {
   });
 };
 
-export const restContent = (token) => {
+export const restContent = () => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
+    // headers: {
+    // "Content-Type": "application/json",
+    // Authorization: `Bearer ${token}`,
+    // },
   }).then((response) => {
     return response.ok ? response.json() : Promise.reject(response.status);
   });
