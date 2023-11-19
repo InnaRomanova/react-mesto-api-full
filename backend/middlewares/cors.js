@@ -1,7 +1,7 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
-  "http://mesto-travel.store",
-  "http://mesto-travel.store",
+  "https://mesto-travel.ru",
+  "http://mesto-travel.ru",
   "https://localhost:3000",
   "http://localhost:3000",
 ];

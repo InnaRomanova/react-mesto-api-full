@@ -22,7 +22,7 @@ module.exports.login = (req, res, next) => {
           httpOnly: true,
           sameSite: true,
           secure: true,
-          domain: "mesto-travel.store",
+          domain: "mesto-travel.ru",
         })
         .send({ email });
     })
