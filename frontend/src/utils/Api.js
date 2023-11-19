@@ -10,7 +10,7 @@ class Api {
       method: method,
       headers: {
         "Content-Type": "application/json",
-        // Authorization: this._token,
+        Authorization: this._token,
       },
       credentials: "include",
     };
