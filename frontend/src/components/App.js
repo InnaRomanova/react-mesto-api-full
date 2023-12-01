@@ -20,7 +20,7 @@ function App() {
   const [isImagePopupOpened, setIsImagePopupOpened] = useState(false);
   const [isRemoveCardPopupOpen, setisRemoveCardPopupOpen] = useState(false);
   const [selectCard, setSelectCard] = useState({});
-  const [currentUser, setСurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
   const [deletedCard, setDeletedCard] = useState(false);
   const [userEmail, setUserEmail] = useState('');
@@ -76,7 +76,7 @@ function App() {
   const handleUpdateAvatar = (avatarData) => {
     newApi.editAvatar(avatarData)
       .then((newData) => {
-        setСurrentUser(newData);
+        setCurrentUser(newData);
         setIsEditAvatarClick(false);
       })
       .catch((err) => {
@@ -87,7 +87,7 @@ function App() {
   const handleUpdateUser = (user) => {
     newApi.editUserInfo(user)
       .then((newData) => {
-        setСurrentUser(newData);
+        setCurrentUser(newData);
         setIsEditProfileClick(false);
       })
       .catch((err) => {
@@ -109,7 +109,7 @@ function App() {
     {isLogged && Promise.all([newApi.getCards(), newApi.getUserInfo()])
       .then(([cards, userData]) => {
         setCards(cards);
-        setСurrentUser(userData)
+        setCurrentUser(userData)
       })
       .catch((err) => {
         console.error(err);

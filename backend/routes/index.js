@@ -1,17 +1,20 @@
 const router = require('express').Router();
 const userController = require('../controllers/users');
-const { validateLoginData, validateRegisterData } = require('../utils/validators/userValidators');
+const {
+  validateLoginData,
+  validateRegisterData,
+} = require('../utils/validators/userValidators');
 const cardsRoute = require('./cardsRoute');
 const usersRoute = require('./usersRoute');
 const auth = require('../middlewares/auth');
 const NotFoundCode = require('../errors/notFoundCode');
 
 // крашт-тест потом удалить
-router.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
+// router.get('/crash-test', () => {
+//   setTimeout(() => {
+//     throw new Error('Сервер сейчас упадёт');
+//   }, 0);
+// });
 
 router.post('/signin', validateLoginData, userController.login);
 router.post('/signup', validateRegisterData, userController.createUser);
