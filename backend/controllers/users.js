@@ -15,16 +15,18 @@ module.exports.login = (req, res, next) => {
         expiresIn: '7d',
       });
       res
-        // .send({ email, token })
-        .cookie('token', token, {
+        .send({ email, token })
+/*
+      .cookie('token', token, {
           // JWT токен, который отправляем
           maxAge: 3600000,
           httpOnly: true,
           sameSite: true,
           secure: true,
           domain: 'mesto-travel.ru',
-        })
+        });
         .send({ email });
+*/
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

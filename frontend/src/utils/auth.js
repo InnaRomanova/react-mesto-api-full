@@ -39,10 +39,10 @@ export const restContent = () => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     credentials: "include",
-    // headers: {
-    // "Content-Type": "application/json",
-    // 'Authorization': `Bearer ${token}`,
-    // },
+    headers: {
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'Content-Type': 'application/json',
+      },
   }).then((response) => {
     return response.ok ? response.json() : Promise.reject(response.status);
   });

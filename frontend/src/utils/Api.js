@@ -1,7 +1,7 @@
 class Api {
   constructor({ baseUrl }) {
     this._baseUrl = baseUrl;
-    // this._token = token;
+    this._token = `Bearer ${localStorage.getItem('jwt')}`;
     // this._cohort = cohort;
   }
 
@@ -10,7 +10,7 @@ class Api {
       method: method,
       headers: {
         "Content-Type": "application/json",
-        // Authorization: this._token,
+        "Authorization": this._token,
       },
       credentials: "include",
     };
